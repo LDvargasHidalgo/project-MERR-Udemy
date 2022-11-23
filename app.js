@@ -8,6 +8,8 @@ const app = express();
 //Import routings
 const authRoutes = require("./router/auth");
 const userRoutes = require("./router/user");
+const menuRoutes = require("./router/menu");
+const courseRoutes = require("./router/course");
 
 //configuracion del body Parse para poder mandar contenido json,
 // Nuestro servidor ya es capaz de recibir json en el body de la peticion
@@ -23,4 +25,6 @@ app.use(cors());
 //Configuracion de las rutas
 app.use(`/api/${API_VERSION}`, authRoutes);
 app.use(`/api/${API_VERSION}`, userRoutes);
+app.use(`/api/${API_VERSION}`, menuRoutes);
+app.use(`/api/${API_VERSION}`, courseRoutes);
 module.exports = app;
